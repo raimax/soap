@@ -1,0 +1,108 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost/web-service"
+           targetNamespace="http://localhost/web-service" elementFormDefault="qualified">
+
+    <xs:element name="getPostRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPostResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="post" type="tns:post"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPostsRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPostsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="posts" type="tns:post" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="insertPostRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="post" type="tns:post" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="insertPostResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updatePostRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="post" type="tns:post" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updatePostResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deletePostRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deletePostResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element type="xs:string" name="statusCode"/>
+            <xs:element type="xs:string" name="message"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="post">
+        <xs:sequence>
+            <xs:element type="xs:string" name="title"/>
+            <xs:element type="xs:string" name="category"/>
+            <xs:element type="tns:user" name="author"/>
+            <xs:element type="xs:string" name="content"/>
+        </xs:sequence>
+        <xs:attribute type="xs:integer" name="id"/>
+    </xs:complexType>
+
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element type="xs:string" name="username"/>
+            <xs:element type="xs:string" name="email"/>
+            <xs:element type="xs:dateTime" name="joinedAt"/>
+        </xs:sequence>
+        <xs:attribute type="xs:byte" name="id"/>
+    </xs:complexType>
+</xs:schema>
