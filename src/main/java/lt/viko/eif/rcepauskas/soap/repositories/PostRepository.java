@@ -31,7 +31,8 @@ public class PostRepository implements IRepository<Post> {
 
     @Override
     public void update(Post post) {
-        Integer postIndex = blogContext.getPosts().indexOf(post);
+        Post originalPost = this.get(post.getId());
+        Integer postIndex = blogContext.getPosts().indexOf(originalPost);
         blogContext.getPosts().set(postIndex, post);
     }
 

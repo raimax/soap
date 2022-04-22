@@ -1,6 +1,7 @@
 package lt.viko.eif.rcepauskas.soap.repositories;
 
 import lt.viko.eif.rcepauskas.blog.Blog;
+import lt.viko.eif.rcepauskas.blog.Post;
 import lt.viko.eif.rcepauskas.blog.User;
 import org.springframework.stereotype.Component;
 
@@ -31,7 +32,8 @@ public class UserRepository implements IRepository<User> {
 
     @Override
     public void update(User user) {
-        Integer userIndex = blogContext.getUsers().indexOf(user);
+        User originalUser = this.get(user.getId());
+        Integer userIndex = blogContext.getUsers().indexOf(originalUser);
         blogContext.getUsers().set(userIndex, user);
     }
 
