@@ -1,5 +1,5 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost/web-service"
-           targetNamespace="http://localhost/web-service" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost/web-service/post"
+           targetNamespace="http://localhost/web-service/post" elementFormDefault="qualified">
 
     <xs:element name="getPostRequest">
         <xs:complexType>
@@ -92,10 +92,38 @@
             <xs:element type="xs:string" name="title"/>
             <xs:element type="xs:string" name="category"/>
             <xs:element type="tns:user" name="author"/>
+            <xs:element type="xs:date" name="createdAt"/>
+            <xs:element type="xs:string" name="summary"/>
             <xs:element type="xs:string" name="content"/>
+            <xs:element type="xs:integer" name="views"/>
+            <xs:element type="tns:rating" name="ratings"/>
+            <xs:element type="tns:comment" name="comments"/>
+            <xs:element type="xs:string" name="tags" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute type="xs:integer" name="id"/>
     </xs:complexType>
+
+    <xs:complexType name="rating">
+        <xs:sequence>
+            <xs:element type="tns:user" name="user"/>
+            <xs:element type="xs:boolean" name="isLiked"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="comment">
+        <xs:sequence>
+            <xs:element type="tns:user" name="author"/>
+            <xs:element type="xs:date" name="createdAt"/>
+            <xs:element type="xs:string" name="content"/>
+        </xs:sequence>
+        <xs:attribute type="xs:byte" name="id"/>
+    </xs:complexType>
+
+<!--    <xs:simpleType name="tag">
+        <xs:sequence>
+            <xs:element type="xs:string" name="tag" />
+        </xs:sequence>
+    </xs:simpleType>-->
 
     <xs:complexType name="user">
         <xs:sequence>

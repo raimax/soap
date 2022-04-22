@@ -5,5 +5,5 @@
 // Generated on: 2022.04.22 at 02:52:07 PM EEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://localhost/web-service/post", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package lt.viko.eif.rcepauskas.soap.methods.post;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://localhost/web-service/user", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package lt.viko.eif.rcepauskas.soap.methods.user;

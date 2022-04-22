@@ -6,9 +6,9 @@
 //
 
 
-package lt.viko.eif.rcepauskas.soap.methods.post;
+package lt.viko.eif.rcepauskas.soap.methods.user;
 
-import lt.viko.eif.rcepauskas.blog.Post;
+import lt.viko.eif.rcepauskas.blog.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="posts" type="{http://localhost/web-service/post}post" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="users" type="{http://localhost/web-service/user}user" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -39,40 +39,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "posts"
+    "users"
 })
-@XmlRootElement(name = "getPostsResponse")
-public class GetPostsResponse {
+@XmlRootElement(name = "getUsersResponse")
+public class GetUsersResponse {
 
-    protected List<Post> posts;
+    protected List<User> users;
 
     /**
-     * Gets the value of the posts property.
+     * Gets the value of the users property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the posts property.
+     * This is why there is not a <CODE>set</CODE> method for the users property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPosts().add(newItem);
+     *    getUsers().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Post }
+     * {@link User }
      * 
      * 
      */
-    public List<Post> getPosts() {
-        if (posts == null) {
-            posts = new ArrayList<Post>();
+    public List<User> getUsers() {
+        if (users == null) {
+            users = new ArrayList<User>();
         }
-        return this.posts;
+        return this.users;
     }
 
 }

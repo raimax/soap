@@ -1,9 +1,9 @@
 package lt.viko.eif.rcepauskas.soap.repositories;
+
 import lt.viko.eif.rcepauskas.blog.Blog;
 import lt.viko.eif.rcepauskas.blog.Post;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.List;
 
 @Component

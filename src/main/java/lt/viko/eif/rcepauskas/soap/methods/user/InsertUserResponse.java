@@ -6,7 +6,7 @@
 //
 
 
-package lt.viko.eif.rcepauskas.soap.methods.post;
+package lt.viko.eif.rcepauskas.soap.methods.user;
 
 import lt.viko.eif.rcepauskas.soap.ServiceStatus;
 
@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="serviceStatus" type="{http://localhost/web-service/post}serviceStatus"/&gt;
+ *         &lt;element name="serviceStatus" type="{http://localhost/web-service/user}serviceStatus"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -40,8 +40,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "serviceStatus"
 })
-@XmlRootElement(name = "insertPostResponse")
-public class InsertPostResponse {
+@XmlRootElement(name = "insertUserResponse")
+public class InsertUserResponse {
 
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;

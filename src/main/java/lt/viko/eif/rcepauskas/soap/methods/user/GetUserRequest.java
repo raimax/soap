@@ -6,10 +6,9 @@
 //
 
 
-package lt.viko.eif.rcepauskas.soap.methods.post;
+package lt.viko.eif.rcepauskas.soap.methods.user;
 
-import lt.viko.eif.rcepauskas.soap.ServiceStatus;
-
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -27,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="serviceStatus" type="{http://localhost/web-service/post}serviceStatus"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,36 +37,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "serviceStatus"
+    "id"
 })
-@XmlRootElement(name = "insertPostResponse")
-public class InsertPostResponse {
+@XmlRootElement(name = "getUserRequest")
+public class GetUserRequest {
 
     @XmlElement(required = true)
-    protected ServiceStatus serviceStatus;
+    protected Integer id;
 
     /**
-     * Gets the value of the serviceStatus property.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
-     *     {@link ServiceStatus }
+     *     {@link Integer }
      *     
      */
-    public ServiceStatus getServiceStatus() {
-        return serviceStatus;
+    public Integer getId() {
+        return id;
     }
 
     /**
-     * Sets the value of the serviceStatus property.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
-     *     {@link ServiceStatus }
+     *     {@link Integer }
      *     
      */
-    public void setServiceStatus(ServiceStatus value) {
-        this.serviceStatus = value;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 }

@@ -64,6 +64,7 @@
 					<sourceType>wsdl</sourceType>
 					<sources>
 						<source>src/main/resources/posts.xsd</source>
+						<source>src/main/resources/users.xsd</source>
 					</sources>
 					<outputDirectory>src/main/java/lt/viko/eif/rcepauskas/soap</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>

@@ -17,7 +17,7 @@ import org.springframework.ws.server.endpoint.annotation.*;
 
 @Endpoint
 public class PostEndpoint {
-    private static final String NAMESPACE_URI = "http://localhost/web-service";
+    private static final String NAMESPACE_URI = "http://localhost/web-service/post";
 
     private UnitOfWork unitOfWork;
 
